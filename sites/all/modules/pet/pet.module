@@ -1,0 +1,20 @@
+<?php
+function pet_menu(){
+  $items = array();
+  $items['pet'] = array(
+    'title' => "My Favorite Pet",
+    'page callback' => 'pet_display',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function pet_display() {
+  return '
+  <ul>
+    <li>Frank was is my favorite cat.  He is a great mouser</li>
+  </ul>
+  <img src="/' . drupal_get_path('module', 'pet') . '/cat.jpeg">
+  ';
+}
