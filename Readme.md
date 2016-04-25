@@ -6,7 +6,7 @@
 
 ## Description
 
-_This weeks code review focused on site building with Drupal.  No coding was necessary.  The focus was on using core Drupal functionality. That included core and contrib modules as well as blocks, content types and features._
+_This project is all about implementing custom modules in Drupal 7_
 
 ## Setup/Installation Requirements
 
