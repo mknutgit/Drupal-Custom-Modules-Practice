@@ -35,20 +35,10 @@
         }
     }
 
-    // function goodbye_authenticated() {
-    //     if (user_has_role(3)) {
-    //         return '<p>Bye Bye Bye!</p>';
-    //     }
-    //     elseif (user_has_role(2)) {
-    //         return '<p>Come back soon</p>';
-    //     }
-    //     else {
-    //         return '<p>See you later</p>';
-    //     }
-    // }
     function goodbye_authenticated_admin() {
         return '<p>Bye Bye Bye!</p>';
     }
+
     function goodbye_authenticated_user() {
         return '<p>See you later!</p>';
     }
@@ -64,3 +54,4 @@
             $_GET['destination'] = 'goodbye_authenticated_user';
         }
     }
+    
