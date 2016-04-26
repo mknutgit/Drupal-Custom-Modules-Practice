@@ -2,7 +2,7 @@
 function greeting_menu() {
   $items = array();
   $items['hello_friend'] = array(
-    'title' => "hello Friend!",
+    'title' => "Hello Friend!",
     'page callback' => 'say_hello',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
