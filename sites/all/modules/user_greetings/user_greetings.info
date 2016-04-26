@@ -1,0 +1,5 @@
+name = User Greeting
+description = Splash page greetings for users as they login or out based on user profile
+package = Epicodus Examples
+core = 7.x
+files[] = user.greeting.module

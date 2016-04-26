@@ -1,0 +1,66 @@
+<?php
+    function user_greetings_menu() {
+        $items = array();
+        $items['welcome_authenticated'] = array(
+            'title' => "Nice to see you!",
+            'page callback' => 'welcome_authenticated',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['goodbye_authenticated_admin'] = array(
+            'title' => "Bye Bye Bye!",
+            'page callback' => 'goodbye_authenticated_admin',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['goodbye_authenticated_user'] = array(
+            'title' => "See you later!",
+            'page callback' => 'goodbye_authenticated_user',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+
+        return $items;
+    }
+
+    function welcome_authenticated() {
+        if (user_has_role(3)) {
+            return '<p>Nice to see you administrator!</p>';
+        }
+        elseif (user_has_role(2)) {
+            return '<p>Nice to see you authenticated user!</p>';
+        }
+        else {
+            return '<p>Nice to see you ERR!</p>';
+        }
+    }
+
+    // function goodbye_authenticated() {
+    //     if (user_has_role(3)) {
+    //         return '<p>Bye Bye Bye!</p>';
+    //     }
+    //     elseif (user_has_role(2)) {
+    //         return '<p>Come back soon</p>';
+    //     }
+    //     else {
+    //         return '<p>See you later</p>';
+    //     }
+    // }
+    function goodbye_authenticated_admin() {
+        return '<p>Bye Bye Bye!</p>';
+    }
+    function goodbye_authenticated_user() {
+        return '<p>See you later!</p>';
+    }
+
+    function user_greetings_user_login() {
+        $_GET['destination'] = 'welcome_authenticated';
+    }
+
+    function user_greetings_user_logout() {
+        if (user_has_role(3)) {
+            $_GET['destination'] = 'goodbye_authenticated_admin';
+        } elseif (user_has_role(2)) {
+            $_GET['destination'] = 'goodbye_authenticated_user';
+        }
+    }

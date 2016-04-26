@@ -1,5 +1,5 @@
 <?php
-    function hello_user_menu() {
+    function user_greeting_menu() {
         $items = array();
         $items['hello_new_user'] = array(
             'title' => "Hello New User!",
