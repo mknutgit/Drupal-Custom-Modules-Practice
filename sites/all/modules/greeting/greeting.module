@@ -7,9 +7,9 @@ function greeting_menu() {
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
-    $items['farwell'] = array(
+    $items['farewell'] = array(
       'title' => 'Farwell Friend!',
-      'page callback' => 'say_farwell',
+      'page callback' => 'say_farewell',
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM,
     );
@@ -20,6 +20,14 @@ function say_hello() {
     return '<p>Hello my dear friend!</p>';
 }
 
-function say_farwell() {
+function say_farewell() {
     return '<p>Fare thee well my dear friend!</p>';
+}
+
+function greeting_user_login() {
+  $_GET['destination'] = 'hello_friend';
+}
+
+function greeting_user_logout() {
+  $_GET['destination'] = 'farewell';
 }
