@@ -24,7 +24,10 @@
     }
 
     function welcome_authenticated() {
-        if (user_has_role(3)) {
+        if (user_has_role(4)) {
+            return '<p>Nice to see you moderator!</p>';
+        }
+        elseif (user_has_role(3)) {
             return '<p>Nice to see you administrator!</p>';
         }
         elseif (user_has_role(2)) {
@@ -54,4 +57,3 @@
             $_GET['destination'] = 'goodbye_authenticated_user';
         }
     }
-    
