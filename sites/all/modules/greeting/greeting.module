@@ -5,13 +5,13 @@ function greeting_menu() {
     'title' => "hello Friend!",
     'page callback' => 'say_hello',
         'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
+        'type' => MENU_CALLBACK,
     );
     $items['farewell'] = array(
       'title' => 'Farwell Friend!',
       'page callback' => 'say_farewell',
       'access callback' => TRUE,
-      'type' => MENU_NORMAL_ITEM,
+      'type' => MENU_CALLBACK,
     );
     return $items;
   }
